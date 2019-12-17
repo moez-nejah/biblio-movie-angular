@@ -1,0 +1,40 @@
+
+<h3 class="first">Liste des films</h3>
+<p-table #dt  [columns]="cols" [value]="movies" [paginator]="true" [rows]="10">
+
+    <ng-template pTemplate="caption">
+        <div style="text-align: right">        
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="chercher par titre,réalisateur,date de sortie ou par type" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+            </th>
+            <th>Action</th>        
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+            <td> 
+                <i class="pi pi-pencil"(click)="updateMovie(rowData)" ></i>
+                <i class="pi pi-trash" (click)="DeleteMovie(rowData.id)"></i>
+                
+             <!--   <button pButton type="button" label="Modifier" class="ui-button-rounded ui-button-warning" (click)="updateMovie(rowData)" > </button>          
+                <button pButton type="button" label="" class="ui-button-rounded ui-button-danger" (click)="DeleteMovie(rowData.id)"></button>
+             -->
+              </td>
+        </tr>
+    </ng-template>
+</p-table>
+<a href="/movie/ajout">
+    <i class="glyphicon glyphicon-plus"> 
+        <button pButton type="button" label="Ajouter un film" class="ui-button-rounded" href="/movie/ajout"></button></i> 
+  </a>

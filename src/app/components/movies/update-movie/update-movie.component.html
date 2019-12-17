@@ -1,0 +1,61 @@
+
+
+  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" >
+     
+  
+      <!-- Main content -->
+      <section class="content">
+        
+        
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <h5 align="center">  Modification du film </h5>
+            <form [formGroup]="movieForm" (ngSubmit)="onSaveMovie()">
+
+              <div class="form-group">
+                <label for="title">Titre</label>
+                <input type="text" id="title"
+                       class="form-control" formControlName="title">
+              </div>
+
+              <div class="form-group">
+                <label for="realisateur">Réalisateur</label>
+                <input type="text" id="realisateur"
+                       class="form-control" formControlName="realisateur">
+              </div>
+
+              <div class="form-group">
+                <label for="releaseDate">Date de sortie</label>
+                <input type="date" class="form-control" id="releaseDate"  formControlName="releaseDate" >  
+                <!-- <input type="text" class="form-control" id="releaseDate" formControlName="releaseDate" > -->
+              </div>
+
+            
+            
+              <div class="form-group">
+                <label for="type">Type</label>
+                <input type="text" id="type"
+                       class="form-control" formControlName="type">
+            
+              </div>
+
+            <button class="btn btn-success" [disabled]="movieForm.invalid"
+                  type="submit">Enregistrer
+            </button>
+            </form>
+          </div>
+        </div>
+        
+
+
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+  
+    
+  
+ 
+  
