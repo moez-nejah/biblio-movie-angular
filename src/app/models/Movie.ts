@@ -7,7 +7,7 @@ export class Movie {
   releaseDate : string ;
   type : string ; 
   
-  constructor(title,realisateur,releaseDate ,type )
+  constructor(title, realisateur, releaseDate, type)
   {
     this.title= title; 
     this.realisateur=realisateur; 

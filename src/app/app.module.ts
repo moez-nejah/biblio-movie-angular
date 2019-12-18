@@ -15,6 +15,7 @@ import { DataTablesModule } from 'angular-datatables';
 import {TableModule} from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
 import {ButtonModule} from 'primeng/button';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {ButtonModule} from 'primeng/button';
     
   ],
   providers: [
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

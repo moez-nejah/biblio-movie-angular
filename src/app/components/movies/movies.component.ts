@@ -48,7 +48,6 @@ export class MoviesComponent implements OnInit {
       this.movieService.getmovies().subscribe((movies)=>{
         this.movies=movies;
         
-        console.log(movies) ;
       },(error)=>{
         console.log(error);
       })

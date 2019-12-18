@@ -12,36 +12,31 @@
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
             <h5 align="center">  Modification du film </h5>
-            <form [formGroup]="movieForm" (ngSubmit)="onSaveMovie()">
+            <form [formGroup]="myForm" (ngSubmit)="onSaveMovie()">
 
               <div class="form-group">
                 <label for="title">Titre</label>
-                <input type="text" id="title"
-                       class="form-control" formControlName="title">
+                <input type="text" class="form-control" formControlName="title">
               </div>
 
               <div class="form-group">
                 <label for="realisateur">Réalisateur</label>
-                <input type="text" id="realisateur"
-                       class="form-control" formControlName="realisateur">
+                <input type="text" class="form-control" formControlName="realisateur">
               </div>
 
               <div class="form-group">
                 <label for="releaseDate">Date de sortie</label>
-                <input type="date" class="form-control" id="releaseDate"  formControlName="releaseDate" >  
-                <!-- <input type="text" class="form-control" id="releaseDate" formControlName="releaseDate" > -->
+                <input type="date" class="form-control" formControlName="releaseDate" >  
               </div>
 
             
             
               <div class="form-group">
                 <label for="type">Type</label>
-                <input type="text" id="type"
-                       class="form-control" formControlName="type">
-            
+                <input type="text" class="form-control" formControlName="movieType">
               </div>
 
-            <button class="btn btn-success" [disabled]="movieForm.invalid"
+            <button class="btn btn-success" [disabled]="myForm.invalid"
                   type="submit">Enregistrer
             </button>
             </form>
